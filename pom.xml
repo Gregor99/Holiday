@@ -40,6 +40,11 @@
             <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.acciente.oacc</groupId>
+            <artifactId>acciente-oacc</artifactId>
+            <version>2.0.0-rc.7</version>
+        </dependency>
     </dependencies>
 
     <build>

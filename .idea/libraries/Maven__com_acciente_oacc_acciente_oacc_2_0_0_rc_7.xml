@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.acciente.oacc:acciente-oacc:2.0.0-rc.7">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/acciente/oacc/acciente-oacc/2.0.0-rc.7/acciente-oacc-2.0.0-rc.7.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/acciente/oacc/acciente-oacc/2.0.0-rc.7/acciente-oacc-2.0.0-rc.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/acciente/oacc/acciente-oacc/2.0.0-rc.7/acciente-oacc-2.0.0-rc.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
