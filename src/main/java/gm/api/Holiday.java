@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Table(name = "holiday")
 @NamedQueries({
         @NamedQuery(name = "findAll",
-        query = "select h from holiday h")
+        query = "select h from Holiday h")
 })
 public class Holiday {
 
