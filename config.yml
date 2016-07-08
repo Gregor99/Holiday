@@ -2,6 +2,8 @@ logging:
   level: INFO
   loggers:
     holidays: DEBUG
+# start the server & app by running: java -jar target/holiday-0.0.1-SNAPSHOT.jar server config.yml
+# in C:\Users\Gregor\IdeaProjects\Holiday
 
 # Database settings.
 database:
