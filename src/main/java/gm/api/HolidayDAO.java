@@ -36,7 +36,7 @@ public class HolidayDAO extends AbstractDAO<Holiday> {
         currentSession().delete(new Holiday(idHoliday));
     }
 
-//    public Holiday uredi (Integer idHolidayOld, Holiday holidayNew) {
+//    public Holiday edit (Integer idHolidayOld, Holiday holidayNew) {
 //        holidayNew.setIdUser(idHolidayOld);
 //        currentSession().update(holidayNew);
 //        return holidayNew;
