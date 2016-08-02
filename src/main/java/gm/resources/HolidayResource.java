@@ -3,11 +3,9 @@ package gm.resources;
 import gm.api.Holiday;
 import gm.api.HolidayDAO;
 import io.dropwizard.hibernate.UnitOfWork;
+import io.dropwizard.jersey.params.IntParam;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -30,5 +28,12 @@ public class HolidayResource {
     @UnitOfWork
     public List<Holiday> viewAll() {
         return holidayDAO.findAll();
+    }
+
+    @GET
+    @UnitOfWork
+    @Path("/{idUser}")
+    public List<Holiday> findByUser(@PathParam("idUser") IntParam idUser) {
+        return holidayDAO.findByUser(idUser.get());
     }
 }

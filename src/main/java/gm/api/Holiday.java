@@ -12,7 +12,10 @@ import javax.persistence.*;
 @Table(name = "holiday")
 @NamedQueries({
         @NamedQuery(name = "findAll",
-        query = "select h from Holiday h")
+        query = "select h from Holiday h"),
+
+        @NamedQuery(name = "findByUser",
+        query = "select h from Holiday h where idUser = :idUser")
 })
 public class Holiday {
 
@@ -25,6 +28,10 @@ public class Holiday {
     private Integer idUser;
 
     public Holiday() {}
+
+    public Holiday(Integer idHoliday) {
+        this.idHoliday = idHoliday;
+    }
 
     public Holiday(Integer idHoliday, Integer idUser) {
         this.idHoliday = idHoliday;
