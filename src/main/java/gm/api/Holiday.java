@@ -1,6 +1,8 @@
 package gm.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
 
 import javax.persistence.*;
 
@@ -27,15 +29,25 @@ public class Holiday {
     @Column(name = "id_user")
     private Integer idUser;
 
+
+
+    @Column(name = "start_date")
+    private LocalDate startDate;
+
+    @Column(name = "end_date")
+    private LocalDate endDate;
+
     public Holiday() {}
 
     public Holiday(Integer idHoliday) {
         this.idHoliday = idHoliday;
     }
 
-    public Holiday(Integer idHoliday, Integer idUser) {
+    public Holiday(Integer idHoliday, Integer idUser, LocalDate startDate, LocalDate endDate) {
         this.idHoliday = idHoliday;
         this.idUser = idUser;
+        this.startDate = startDate;
+        this.endDate = endDate;
     }
 
     @JsonProperty
@@ -57,4 +69,16 @@ public class Holiday {
     public void setIdUser(Integer idUser) {
         this.idUser = idUser;
     }
+
+    @JsonProperty
+    public LocalDate getStartDate() { return this.startDate; }
+
+    @JsonProperty
+    public void setStartDate(LocalDate startDate) { this.startDate = startDate; }
+
+    @JsonProperty
+    public LocalDate getEndDate() { return this.endDate; }
+
+    @JsonProperty
+    public void setEndDate(LocalDate endDate) { this.endDate = endDate; }
 }

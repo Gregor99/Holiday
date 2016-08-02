@@ -5,8 +5,11 @@ import gm.api.HolidayDAO;
 import io.dropwizard.hibernate.UnitOfWork;
 import io.dropwizard.jersey.params.IntParam;
 
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
 import java.util.List;
 
 /**
@@ -35,5 +38,20 @@ public class HolidayResource {
     @Path("/{idUser}")
     public List<Holiday> findByUser(@PathParam("idUser") IntParam idUser) {
         return holidayDAO.findByUser(idUser.get());
+    }
+
+    @POST
+    @UnitOfWork
+    @Path("/{idUser}")
+    public Response addHoliday(@Valid Holiday holiday) {
+        return Response.created(UriBuilder.fromResource(HolidayResource.class).build()).entity(holidayDAO.saveToDataBase(holiday)).build();
+    }
+
+    @DELETE
+    @UnitOfWork
+    @Path("/{idUser}")
+    public Response deleteHoliday(@PathParam("idUser") IntParam idUser) {
+        holidayDAO.deleteFromDataBase(idUser.get());
+        return Response.ok().build();
     }
 }
